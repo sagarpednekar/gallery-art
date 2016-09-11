@@ -1,0 +1,32 @@
+!!! 5
+%html
+%head
+  %title InstaMag
+  = stylesheet_link_tag    "application"
+  = javascript_include_tag "application", 'data-turbolinks-track' => true 
+  = csrf_meta_tags
+  
+%body
+%div.top-bar.stacked-for-medium
+  .container
+    %div.top-bar-title
+    %strong= link_to "Instamag",root_path
+    - if user_signed_in?
+      %div.top-bar-right
+        %ul.menu
+          %li= link_to "Gram It",new_instapic_path
+          %li= link_to "Settings", edit_user_registration_path
+          %li= link_to "Sign Out",destroy_user_session_path, method: :delete
+    - else
+      %div.top-bar-right
+        %ul.menu
+          %li= link_to "Login",new_user_session_path
+          %li= link_to "Join", new_user_registration_path
+
+
+
+.row
+  - flash.each do |name,msg|
+    = content_tag :div,msg,class: "alert-box success"
+  = yield 
+   

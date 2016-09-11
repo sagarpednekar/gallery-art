@@ -1,0 +1,6 @@
+.medium-12.columns
+	#pics.transitions-enabled
+		- @instapic.each do |pic|
+			.box
+			= image_tag (pic.image.url(:medium))
+			%h2= link_to pic.title, pic

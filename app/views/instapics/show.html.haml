@@ -1,0 +1,10 @@
+.row
+	.medium-6.medium-offset-3.columns
+	%div.thumbnail
+		= image_tag @instapic.image.url
+	%h1= @instapic.title
+	%p= @instapic.description
+	%p= @instapic.user.email
+	= link_to "Back", root_path
+	= link_to "Edit", edit_instapic_path
+	= link_to "Delete", instapic_path, method: :delete,data: {confirm: "Are you sure?"}

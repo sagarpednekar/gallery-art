@@ -1,0 +1,15 @@
+%div.row.callout.large
+  = simple_form_for @instapic do |f| 
+    - if @instapic.errors.any?
+      #errors
+      %h2 
+      = pluralize(@instapic.errors.count,"error")
+      Prohibit pic from saving
+      %ul
+      - @instapic.errors.full_messages.each do |msg|
+        %li= msg
+    %div.columns.large-12
+      =f.input :title
+      =f.input :description
+      =f.input :image,as: :file
+      =f.button :submit

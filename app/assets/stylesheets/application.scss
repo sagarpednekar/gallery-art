@@ -1,0 +1,38 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require 'masonry/transitions'
+ /*= require foundation
+ *= require foundation_and_overrides
+
+ */
+ @import "foundation_and_overrides";
+ .alert {
+    padding: 1em;
+    background: cadetblue;
+}
+.alert-box.success {
+    border-left-color: #87d37c;
+    background-color: #b7e5b0; }
+.alert-box.success strong {
+      color: #87d37c; }
+ .alert-box {
+  padding: 1.3rem;
+  border-width: 0 0 0 0.35rem;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem; }
+ .alert-box.radius {
+    border-radius: 0.6rem; }
+
+
